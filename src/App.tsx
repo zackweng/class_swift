@@ -3,7 +3,7 @@ import { createBrowserRouter, Navigate, RouterProvider } from 'react-router-dom'
 import './global.css'
 import { Home } from './pages/Home'
 
-export function App () {
+export default function App () {
   const router = createBrowserRouter([
     {
       path: '/',
