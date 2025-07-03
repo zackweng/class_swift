@@ -45,20 +45,20 @@ export default tseslint.config(
       'import/order': [
         'warn',
         {
-          'pathGroups': [
+          pathGroups: [
             {
-              'pattern': 'react',
-              'group': 'builtin',
-              'position': 'before'
+              pattern: 'react',
+              group: 'builtin',
+              position: 'before',
             },
             {
-              'pattern': '~/**',
-              'group': 'external',
-              'position': 'after'
-            }
+              pattern: '~/**',
+              group: 'external',
+              position: 'after',
+            },
           ],
-          'pathGroupsExcludedImportTypes': ['react'],
-          'groups': [
+          pathGroupsExcludedImportTypes: ['react'],
+          groups: [
             'builtin',
             'external',
             'internal',
@@ -67,14 +67,16 @@ export default tseslint.config(
             'sibling',
             'index',
             'object',
-            'type'
+            'type',
           ],
-          'alphabetize': {
-            'order': 'asc'
+          alphabetize: {
+            order: 'asc',
           },
-          'newlines-between': 'always'
-        }
+          'newlines-between': 'always',
+          distinctGroup: true,
+        },
       ],
+
       // ===== React 相關規則 =====
       'react/react-in-jsx-scope': 'off',
       'react/prop-types': 'off',
@@ -121,28 +123,26 @@ export default tseslint.config(
       // ===== React Hooks 相關規則 =====
       'react-hooks/rules-of-hooks': 'error',
       'react-hooks/exhaustive-deps': 'warn',
-      'react-refresh/only-export-components': [
-        'warn',
+
+      // ===== Eslint 相關規則 =====
+      'eslint-comments/require-description': [
+        'error',
         {
-          allowConstantExport: true,
+          ignore: ['eslint-disable-next-line'],
         },
       ],
+      'new-cap': ['error', { 
+        newIsCap: true,
+        capIsNew: false,
+        properties: true,
+        newIsCapExceptions: ['p5']
+      }],
+      complexity: 'off',
 
       // ===== TypeScript 相關規則 =====
       '@typescript-eslint/explicit-function-return-type': 'off',
       '@typescript-eslint/no-non-null-assertion': 'error',
-      '@typescript-eslint/no-magic-numbers': [
-        'warn',
-        {
-          ignore: [-1, 0, 1, 2],
-          ignoreArrayIndexes: true,
-          ignoreDefaultValues: true,
-          ignoreEnums: true,
-          ignoreNumericLiteralTypes: true,
-          ignoreReadonlyClassProperties: true,
-          ignoreTypeIndexes: true,
-        },
-      ],
+      '@typescript-eslint/no-magic-numbers': 'off',
       '@typescript-eslint/restrict-template-expressions': 'off',
       '@typescript-eslint/no-confusing-void-expression': 'off',
       '@typescript-eslint/triple-slash-reference': 'off',
@@ -173,6 +173,21 @@ export default tseslint.config(
         },
       ],
       '@typescript-eslint/no-use-before-define': 'error',
+      '@typescript-eslint/no-unsafe-type-assertion': 'off',
+      '@typescript-eslint/no-unnecessary-type-parameters': 'off',
+      '@typescript-eslint/prefer-destructuring': [
+        'warn',
+        {
+          VariableDeclarator: {
+            array: false,
+            object: true,
+          },
+          AssignmentExpression: {
+            array: false,
+            object: true,
+          },
+        },
+      ],
 
       // ===== 程式碼風格規則 (使用 @stylistic) =====
       '@stylistic/indent': ['error', 2],
@@ -188,6 +203,7 @@ export default tseslint.config(
           imports: 'always-multiline',
           exports: 'always-multiline',
           functions: 'only-multiline',
+          generics: 'always',
         },
       ],
       '@stylistic/member-delimiter-style': [
@@ -205,87 +221,123 @@ export default tseslint.config(
         },
       ],
       '@stylistic/type-annotation-spacing': 'error',
-      '@stylistic/comma-spacing': ['error', {
-        before: false,
-        after: true
-      }],
+      '@stylistic/comma-spacing': [
+        'error',
+        {
+          before: false,
+          after: true,
+        },
+      ],
       '@stylistic/array-bracket-spacing': ['error', 'never'],
-      '@stylistic/arrow-spacing': ['error', {
-        before: true,
-        after: true
-      }],
+      '@stylistic/arrow-spacing': [
+        'error',
+        {
+          before: true,
+          after: true,
+        },
+      ],
       '@stylistic/block-spacing': ['error', 'always'],
-      '@stylistic/brace-style': ['error', '1tbs', {
-        allowSingleLine: true
-      }],
+      '@stylistic/brace-style': [
+        'error',
+        '1tbs',
+        {
+          allowSingleLine: true,
+        },
+      ],
       '@stylistic/comma-style': ['error', 'last'],
       '@stylistic/dot-location': ['error', 'property'],
       '@stylistic/eol-last': ['error', 'always'],
       '@stylistic/func-call-spacing': ['error', 'never'],
-      '@stylistic/key-spacing': ['error', {
-        beforeColon: false,
-        afterColon: true
-      }],
-      '@stylistic/keyword-spacing': ['error', {
-        before: true,
-        after: true
-      }],
+      '@stylistic/key-spacing': [
+        'error',
+        {
+          beforeColon: false,
+          afterColon: true,
+        },
+      ],
+      '@stylistic/keyword-spacing': [
+        'error',
+        {
+          before: true,
+          after: true,
+        },
+      ],
       '@stylistic/linebreak-style': ['error', 'unix'],
-      '@stylistic/max-len': ['error', {
-        code: 100,
-        ignoreComments: true,
-        ignoreUrls: true,
-        ignoreStrings: true,
-        ignoreTemplateLiterals: true
-      }],
+      '@stylistic/max-len': [
+        'error',
+        {
+          code: 100,
+          ignoreComments: true,
+          ignoreUrls: true,
+          ignoreStrings: true,
+          ignoreTemplateLiterals: true,
+        },
+      ],
       '@stylistic/multiline-ternary': ['error', 'always-multiline'],
       '@stylistic/new-parens': 'error',
       '@stylistic/no-mixed-spaces-and-tabs': 'error',
       '@stylistic/no-multi-spaces': 'error',
-      '@stylistic/no-multiple-empty-lines': ['error', {
-        max: 1,
-        maxEOF: 0
-      }],
+      '@stylistic/no-multiple-empty-lines': [
+        'error',
+        {
+          max: 1,
+          maxEOF: 0,
+        },
+      ],
       '@stylistic/no-trailing-spaces': 'error',
       '@stylistic/no-whitespace-before-property': 'error',
       '@stylistic/object-curly-spacing': ['error', 'always'],
-      '@stylistic/object-property-newline': ['error', {
-        allowAllPropertiesOnSameLine: true
-      }],
+      '@stylistic/object-property-newline': [
+        'error',
+        {
+          allowAllPropertiesOnSameLine: true,
+        },
+      ],
       '@stylistic/operator-linebreak': ['error', 'after'],
       '@stylistic/padded-blocks': ['error', 'never'],
       '@stylistic/quote-props': ['error', 'as-needed'],
       '@stylistic/quotes': ['error', 'single'],
       '@stylistic/rest-spread-spacing': ['error', 'never'],
-      '@stylistic/semi-spacing': ['error', {
-        before: false,
-        after: true
-      }],
+      '@stylistic/semi-spacing': [
+        'error',
+        {
+          before: false,
+          after: true,
+        },
+      ],
       '@stylistic/space-before-blocks': ['error', 'always'],
       '@stylistic/space-in-parens': ['error', 'never'],
-      '@stylistic/space-unary-ops': ['error', {
-        words: true,
-        nonwords: false
-      }],
+      '@stylistic/space-unary-ops': [
+        'error',
+        {
+          words: true,
+          nonwords: false,
+        },
+      ],
       '@stylistic/spaced-comment': ['error', 'always'],
       '@stylistic/template-curly-spacing': ['error', 'never'],
       '@stylistic/template-tag-spacing': ['error', 'never'],
       '@stylistic/wrap-iife': ['error', 'outside'],
-      '@stylistic/yield-star-spacing': ['error', {
-        before: false,
-        after: true
-      }],
+      '@stylistic/yield-star-spacing': [
+        'error',
+        {
+          before: false,
+          after: true,
+        },
+      ],
+      '@stylistic/max-len': 'off',
 
       // ===== 其他規則 =====
       'no-console': [
         'warn',
         {
-          allow: ['warn', 'error'],
+          allow: ['warn', 'error', 'info'],
         },
       ],
-      'no-process-env': ['error'],
+      'no-process-env': 'off',
       'object-shorthand': 'warn',
       'jsx-quotes': ['warn', 'prefer-double'],
+      'react-refresh/only-export-components': 'off',
     },
   },
 );
