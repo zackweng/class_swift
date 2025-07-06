@@ -3,6 +3,8 @@ import type { ReactNode } from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 
+import { colors } from '../styles/colors'
+
 const Backdrop = styled.div`
   position: fixed;
   inset: 0;
@@ -12,7 +14,8 @@ const Backdrop = styled.div`
 
 const ModalWrapper = styled.div`
   position: fixed;
-  top: 30%;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -22,13 +25,10 @@ const ModalWrapper = styled.div`
 `
 
 const ModalContainer = styled.div<{ width?: string }>`
-  background: #fff;
-  border-radius: 16px;
+  background: ${colors.white};
+  border-radius: 8px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-  width: ${(props) => props.width || '400px'};
-  padding: 32px 24px;
-  display: flex;
-  flex-direction: column;
+  width: ${(props) => props.width};
 `
 
 interface ModalProps {
