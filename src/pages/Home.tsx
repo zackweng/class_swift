@@ -1,6 +1,7 @@
 import { Modal, HStack } from '@ui'
 import { useDispatch, useSelector } from 'react-redux'
 
+import { LeftModal } from '../components/LeftModal/LeftModal'
 import {
   openLeftModal,
   closeLeftModal,
@@ -37,12 +38,7 @@ export function Home () {
           dispatch(closeRightModal())
         }}
         leftWidth="40%"
-        left={leftOpen && (
-          <div>
-            <h2>左側 Modal</h2>
-            <button onClick={() => dispatch(closeLeftModal())}>關閉左側</button>
-          </div>
-        )}
+        left={leftOpen && <LeftModal />}
         rightWidth="50%"
         right={rightOpen && (
           <div>
