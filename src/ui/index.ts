@@ -1,3 +1,3 @@
 export * from './Modal'
-export * from './HStack'
-export * from './VStack'
+export * from './Text'
+export * from './Stack'
