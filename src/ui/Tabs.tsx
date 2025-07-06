@@ -44,7 +44,7 @@ const TabButton = styled.button<{ $active: boolean, $disabled?: boolean }>`
 
 const TabContent = styled.div`
   background: ${colors.white};
-  border-radius: 12px 12px 0 0;
+  border-radius: 12px;
   padding: 24px;
   height: 100%;
   width: 100%;

@@ -36,7 +36,6 @@ const initialStackProps: StackProps = {
   justify: 'flex-start',
   padding: '0px',
   width: '100%',
-  height: '100%',
 }
 
 export const HStack = (props: StackProps) => {
