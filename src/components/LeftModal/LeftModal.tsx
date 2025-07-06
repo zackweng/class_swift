@@ -14,10 +14,10 @@ import type { RootState } from 'src/store'
 
 const ModalContent = styled.div`
   position: relative;
-  min-height: 300px;
   padding: 24px 32px;
   background-color: ${colors.grayLight};
   border-radius: 24px;
+  height: 100%;
 `
 
 export const LeftModal = () => {
@@ -42,7 +42,7 @@ export const LeftModal = () => {
           <CopyField label="Link" text={link ?? ''} />
         </HStack>
         <VStack gap="12px" align="center">
-          <QRCode value="https://www.classswift.viewsonic.io/" style={{ width: '80%', height: 'auto' }} title="Class Swift" />
+          <QRCode value="https://www.classswift.viewsonic.io/" style={{ width: '320px', height: '320px' }} title="Class Swift" />
           <Text fontSize="12px" fontWeight={700}>version 1.1.7</Text>
         </VStack>
       </VStack>
