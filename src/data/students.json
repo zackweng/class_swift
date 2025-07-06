@@ -1,0 +1,51 @@
+{
+  "className": "302 Science",
+  "id": "X58E9647",
+  "link": "https://www.classswift.viewsonic.io/",
+  "students": [
+    {"id": 1, "name": "Philip", "score": 7, "enabled": true, "group": "A"},
+    {"id": 2, "name": "Darrell", "score": 3, "enabled": true, "group": "A"},
+    {"id": 3, "name": "Cody", "score": 8, "enabled": true, "group": "A"},
+    {"id": 4, "name": "Bessie", "score": 2, "enabled": true, "group": "A"},
+    {"id": 5, "name": "Wendy", "score": 6, "enabled": true, "group": "A"},
+    {"id": 6, "name": "Esther", "score": 9, "enabled": true, "group": "A"},
+    {"id": 7, "name": "Guest", "score": 0, "enabled": false, "group": "A"},
+    {"id": 8, "name": "Guest", "score": 0, "enabled": false, "group": "A"},
+
+    {"id": 9, "name": "Gloria", "score": 4, "enabled": true, "group": "B"},
+    {"id": 10, "name": "Guest", "score": 0, "enabled": false, "group": "B"},
+    {"id": 11, "name": "Ann", "score": 1, "enabled": true, "group": "B"},
+    {"id": 12, "name": "Jacob", "score": 10, "enabled": true, "group": "B"},
+    {"id": 13, "name": "Calvin", "score": 6, "enabled": true, "group": "B"},
+    {"id": 14, "name": "Joe", "score": 2, "enabled": true, "group": "B"},
+    {"id": 15, "name": "Guest", "score": 0, "enabled": false, "group": "B"},
+    {"id": 16, "name": "Guest", "score": 0, "enabled": false, "group": "B"},
+
+    {"id": 17, "name": "Sophie", "score": 8, "enabled": true, "group": "C"},
+    {"id": 18, "name": "Lucas", "score": 7, "enabled": true, "group": "C"},
+    {"id": 19, "name": "Guest", "score": 0, "enabled": false, "group": "C"},
+    {"id": 20, "name": "Ethan", "score": 3, "enabled": true, "group": "C"},
+    {"id": 21, "name": "Olivia", "score": 9, "enabled": true, "group": "C"},
+    {"id": 22, "name": "Noah", "score": 4, "enabled": true, "group": "C"},
+    {"id": 23, "name": "Guest", "score": 0, "enabled": false, "group": "C"},
+    {"id": 24, "name": "Guest", "score": 0, "enabled": false, "group": "C"},
+
+    {"id": 25, "name": "Guest", "score": 0, "enabled": false, "group": "D"},
+    {"id": 26, "name": "Mason", "score": 2, "enabled": true, "group": "D"},
+    {"id": 27, "name": "Ava", "score": 7, "enabled": true, "group": "D"},
+    {"id": 28, "name": "Guest", "score": 0, "enabled": false, "group": "D"},
+    {"id": 29, "name": "Ella", "score": 5, "enabled": true, "group": "D"},
+    {"id": 30, "name": "James", "score": 3, "enabled": true, "group": "D"},
+    {"id": 31, "name": "Guest", "score": 0, "enabled": false, "group": "D"},
+    {"id": 32, "name": "Guest", "score": 0, "enabled": false, "group": "D"},
+
+    {"id": 33, "name": "Lily", "score": 9, "enabled": true, "group": "E"},
+    {"id": 34, "name": "Henry", "score": 4, "enabled": true, "group": "E"},
+    {"id": 35, "name": "Zoe", "score": 6, "enabled": true, "group": "E"},
+    {"id": 36, "name": "Guest", "score": 0, "enabled": false, "group": "E"},
+    {"id": 37, "name": "Guest", "score": 0, "enabled": false, "group": "E"},
+    {"id": 38, "name": "Ryan", "score": 8, "enabled": true, "group": "E"},
+    {"id": 39, "name": "Guest", "score": 0, "enabled": false, "group": "E"},
+    {"id": 40, "name": "Guest", "score": 0, "enabled": false, "group": "E"}
+  ]
+}
