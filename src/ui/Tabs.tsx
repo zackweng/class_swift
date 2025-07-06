@@ -8,7 +8,7 @@ import { colors } from '../styles/colors'
 import { VStack } from './Stack'
 
 interface TabItem {
-  component: ReactNode,
+  label: ReactNode,
   disabled?: boolean,
 }
 
@@ -66,7 +66,7 @@ export const Tabs = ({ tabList, control, children }: TabsProps) => {
             $disabled={tab.disabled}
             onClick={() => !tab.disabled && setActive(idx)}
           >
-            {tab.component}
+            {tab.label}
           </TabButton>
         ))}
         <div style={{ flex: 1 }} />
