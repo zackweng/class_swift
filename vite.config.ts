@@ -4,6 +4,7 @@ import { fileURLToPath } from 'url'
 import react from '@vitejs/plugin-react-swc'
 import { defineConfig } from 'vite'
 import checker from 'vite-plugin-checker'
+import svgr from 'vite-plugin-svgr'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -12,6 +13,7 @@ const __dirname = path.dirname(__filename)
 export default defineConfig({
   plugins: [
     react(),
+    svgr(),
     checker({
       terminal: true,
       overlay: {
@@ -34,6 +36,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
+      '@assets': path.resolve(__dirname, './src/assets'),
       '@ui': path.resolve(__dirname, './src/ui/index.ts'),
     },
   },
