@@ -10,10 +10,14 @@ interface TextProps extends PropsWithChildren<HTMLAttributes<HTMLSpanElement>> {
   color?: CSSProperties['color'],
 }
 
-const StyledText = styled.span<TextProps>`
-  font-size: ${({ fontSize }) => fontSize};
-  font-weight: ${({ fontWeight }) => fontWeight};
-  color: ${({ color }) => color};
+const StyledText = styled.span<{
+  $fontSize?: CSSProperties['fontSize'],
+  $fontWeight?: CSSProperties['fontWeight'],
+  $color?: CSSProperties['color'],
+}>`
+  font-size: ${({ $fontSize }) => $fontSize};
+  font-weight: ${({ $fontWeight }) => $fontWeight};
+  color: ${({ $color }) => $color};
 `
 
 export const Text = ({
@@ -24,9 +28,9 @@ export const Text = ({
   ...rest
 }: TextProps) => (
   <StyledText
-    fontSize={fontSize}
-    fontWeight={fontWeight}
-    color={color}
+    $fontSize={fontSize}
+    $fontWeight={fontWeight}
+    $color={color}
     {...rest}
   >
     {children}

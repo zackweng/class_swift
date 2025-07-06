@@ -24,11 +24,11 @@ const ModalWrapper = styled.div`
   width: 100%;
 `
 
-const ModalContainer = styled.div<{ width?: string }>`
+const ModalContainer = styled.div<{ $width?: string }>`
   background: ${colors.white};
   border-radius: 8px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-  width: ${(props) => props.width};
+  width: ${({ $width }) => $width};
 `
 
 interface ModalProps {
@@ -60,12 +60,12 @@ export const Modal = ({
       <Backdrop onClick={disableBackdropClick ? undefined : onClose} />
       <ModalWrapper>
         {left && (
-          <ModalContainer width={leftWidth}>
+          <ModalContainer $width={leftWidth}>
             {left}
           </ModalContainer>
         )}
         {right && (
-          <ModalContainer width={rightWidth}>
+          <ModalContainer $width={rightWidth}>
             {right}
           </ModalContainer>
         )}

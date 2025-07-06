@@ -1,3 +1,4 @@
 export * from './Modal'
-export * from './Text'
 export * from './Stack'
+export * from './Tabs'
+export * from './Text'

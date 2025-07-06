@@ -8,6 +8,7 @@ interface StackProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> {
   justify?: CSSProperties['justifyContent'],
   padding?: CSSProperties['padding'],
   width?: CSSProperties['width'],
+  height?: CSSProperties['height'],
 }
 
 const StyledStack = styled.div<{
@@ -17,6 +18,7 @@ const StyledStack = styled.div<{
   $justify?: CSSProperties['justifyContent'],
   $padding?: CSSProperties['padding'],
   $width?: CSSProperties['width'],
+  $height?: CSSProperties['height'],
 }>`
   display: flex;
   flex-direction: ${({ $direction }) => $direction};
@@ -25,6 +27,7 @@ const StyledStack = styled.div<{
   justify-content: ${({ $justify }) => $justify};
   padding: ${({ $padding }) => $padding};
   width: ${({ $width }) => $width};
+  height: ${({ $height }) => $height};
 `
 
 const initialStackProps: StackProps = {
@@ -33,10 +36,11 @@ const initialStackProps: StackProps = {
   justify: 'flex-start',
   padding: '0px',
   width: '100%',
+  height: '100%',
 }
 
 export const HStack = (props: StackProps) => {
-  const { gap, align, justify, padding, width, children, ...rest } = { ...initialStackProps, ...props }
+  const { gap, align, justify, padding, width, height, children, ...rest } = { ...initialStackProps, ...props }
   return (
     <StyledStack
       $gap={gap}
@@ -45,6 +49,7 @@ export const HStack = (props: StackProps) => {
       $justify={justify}
       $padding={padding}
       $width={width}
+      $height={height}
       {...rest}
     >
       {children}
@@ -53,7 +58,7 @@ export const HStack = (props: StackProps) => {
 }
 
 export const VStack = (props: StackProps) => {
-  const { gap, align, justify, padding, width, children, ...rest } = { ...initialStackProps, ...props }
+  const { gap, align, justify, padding, width, height, children, ...rest } = { ...initialStackProps, ...props }
   return (
     <StyledStack
       $gap={gap}
@@ -62,6 +67,7 @@ export const VStack = (props: StackProps) => {
       $justify={justify}
       $padding={padding}
       $width={width}
+      $height={height}
       {...rest}
     >
       {children}
