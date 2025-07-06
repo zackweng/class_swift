@@ -53,9 +53,9 @@ export function Home () {
           dispatch(closeRightModal())
         }}
         leftWidth="40%"
-        left={leftOpen && !loading ? <LeftModal /> : <LoadingModal />}
+        left={loading ? <LoadingModal /> : leftOpen && <LeftModal />}
         rightWidth="50%"
-        right={rightOpen && !loading ? <RightModal /> : <LoadingModal />}
+        right={loading ? <LoadingModal /> : rightOpen && <RightModal />}
         disableBackdropClick
       />
     </>

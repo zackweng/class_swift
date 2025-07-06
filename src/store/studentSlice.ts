@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 
-import type { Classroom } from '../types/classroom'
+import type { Classroom, Student } from '../types/classroom'
 
 interface StudentState {
   className: Classroom['className'] | null,
@@ -26,14 +26,12 @@ const studentSlice = createSlice({
       state.id = action.payload.id
       state.link = action.payload.link
     },
-    setClassName (state, action: PayloadAction<Classroom['className']>) {
-      state.className = action.payload
-    },
-    setStudents (state, action: PayloadAction<Classroom['students']>) {
-      state.students = action.payload
+    setStudentScore (state, action: PayloadAction<{ id: Student['id'], score: Student['score'] }>) {
+      const { id, score } = action.payload
+      state.students = state.students?.map(student => student.id === id ? { ...student, score } : student) ?? null
     },
   },
 })
 
-export const { setClassroom, setClassName, setStudents } = studentSlice.actions
+export const { setClassroom, setStudentScore } = studentSlice.actions
 export default studentSlice.reducer
