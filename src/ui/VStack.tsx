@@ -10,24 +10,24 @@ interface VStackProps extends PropsWithChildren<HTMLAttributes<HTMLDivElement>> 
 }
 
 const StyledVStack = styled.div<{
-  $gap: number | string,
+  $gap: CSSProperties['gap'],
   $align?: CSSProperties['alignItems'],
   $justify?: CSSProperties['justifyContent'],
   $padding?: CSSProperties['padding'],
 }>`
   display: flex;
   flex-direction: column;
-  gap: ${({ $gap }) => typeof $gap === 'number' ? `${$gap}px` : $gap};
-  align-items: ${({ $align }) => $align || 'flex-start'};
-  justify-content: ${({ $justify }) => $justify || 'flex-start'};
-  padding: ${({ $padding }) => $padding || '0'};
+  gap: ${({ $gap }) => $gap};
+  align-items: ${({ $align }) => $align};
+  justify-content: ${({ $justify }) => $justify};
+  padding: ${({ $padding }) => $padding};
 `
 
 export const VStack = ({
   gap = 4,
-  align,
-  justify,
-  padding,
+  align = 'flex-start',
+  justify = 'flex-start',
+  padding = 8,
   children,
   ...rest
 }: VStackProps) => (
