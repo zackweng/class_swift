@@ -22,7 +22,7 @@ const TabHeader = styled.div`
   display: flex;
   align-items: center;
   border-radius: 12px 12px 0 0;
-  padding: 0 16px;
+  padding: 0 32px;
   width: 100%;
 `
 
