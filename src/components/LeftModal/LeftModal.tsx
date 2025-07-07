@@ -31,7 +31,7 @@ export const LeftModal = () => {
   return (
     <ModalContent>
       <CloseIcon onClick={handleClose} />
-      <VStack gap="16px">
+      <VStack gap="16px" height="100%">
         <HStack gap="8px" align="center" style={{ cursor: 'pointer' }}>
           <Left width={12} height={12} />
           <Text fontSize="12px" fontWeight={700}>Back to Class List</Text>
@@ -41,7 +41,7 @@ export const LeftModal = () => {
           <CopyField label="ID: X58E9647" text={`ID: ${id}`} />
           <CopyField label="Link" text={link ?? ''} />
         </HStack>
-        <VStack gap="12px" align="center">
+        <VStack gap="12px" align="center" height="100%" justify="center">
           <QRCode value="https://www.classswift.viewsonic.io/" style={{ width: '320px', height: '320px' }} title="Class Swift" />
           <Text fontSize="12px" fontWeight={700}>version 1.1.7</Text>
         </VStack>
