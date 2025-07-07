@@ -1,4 +1,4 @@
-import { VStack } from '@ui'
+import { Text, VStack } from '@ui'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 
@@ -17,17 +17,16 @@ const GroupContainer = styled.div`
   overflow: auto;
 `
 
-const GroupSection = styled.div`
+const GroupSection = styled(VStack)`
   margin-bottom: 24px;
 `
 
-const GroupTitle = styled.h3`
-  font-size: 20px;
-  font-weight: 700;
-  color: ${colors.black};
-  margin: 0 0 16px 0;
+const GroupTitle = styled(Text)`
   padding: 8px 0;
   border-bottom: 2px solid ${colors.grayDark};
+  font-size: 20px;
+  font-weight: 700;
+  width: 100%;
 `
 
 const StudentGrid = styled.div`
@@ -73,8 +72,8 @@ export const StudentGroup = () => {
           const groupStudents = groupedStudents[group]
           if (!groupStudents || groupStudents.length === 0) return null
           return (
-            <GroupSection key={group}>
-              <GroupTitle>{`Group ${group}`}</GroupTitle>
+            <GroupSection key={group} gap="16px">
+              <GroupTitle fontSize="20px" fontWeight={700}>{`Group ${group}`}</GroupTitle>
               <StudentGrid>
                 {groupStudents.map((student) => (
                   <SingleStudent
