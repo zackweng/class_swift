@@ -7,6 +7,7 @@ import { colors } from '../../styles/colors'
 import { CloseIcon } from '../CloseIcon'
 import { Person } from '../icons/Icons'
 
+import { StudentGroup } from './StudentGroup'
 import { StudentList } from './StudentList'
 
 import type { RootState } from 'src/store'
@@ -50,7 +51,7 @@ export const RightModal = () => {
           control={<div>Control</div>}
         >
           <StudentList />
-          <div>Group</div>
+          <StudentGroup />
         </Tabs>
       </VStack>
     </ModalContent>
