@@ -227,7 +227,6 @@ Error generating stack: `+f.message+`
   text-align: left;
   cursor: pointer;
   font-size: 16px;
-  transition: background 0.2s;
   &:hover {
     background: ${Ve.grayDark};
   }
