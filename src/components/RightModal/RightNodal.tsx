@@ -7,6 +7,7 @@ import { colors } from '../../styles/colors'
 import { CloseIcon } from '../CloseIcon'
 import { Person } from '../icons/Icons'
 
+import { OperationMenu } from './OperationMenu'
 import { StudentGroup } from './StudentGroup'
 import { StudentList } from './StudentList'
 
@@ -48,7 +49,7 @@ export const RightModal = () => {
             { label: 'Student List' },
             { label: 'Group' },
           ]}
-          control={<div>Control</div>}
+          control={<OperationMenu />}
         >
           <StudentList />
           <StudentGroup />
