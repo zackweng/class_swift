@@ -36,7 +36,7 @@ export const RightModal = () => {
     <ModalContent>
       <CloseIcon onClick={handleClose} />
       <VStack gap="16px">
-        <HStack align="center" padding="32px 0 0 16px" gap="16px">
+        <HStack align="center" padding="32px 0 0 32px" gap="16px">
           <Text fontSize="24px" fontWeight={700}>{className}</Text>
           <HStack gap="4px" align="center" width="fit-content">
             <Person width={16} height={16} />
