@@ -42,6 +42,9 @@ const ScoreButton = styled.button<{ color: CSSProperties['color'], $disabled: bo
   width: 32px;
   height: 24px;
   cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'pointer')};
+  &:hover { 
+    opacity: ${({ $disabled }) => ($disabled ? 1 : 0.8)};
+  }
 `
 
 const Score = styled(Text)<{ $enabled: boolean }>`

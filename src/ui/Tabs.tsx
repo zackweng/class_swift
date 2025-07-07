@@ -34,12 +34,14 @@ const TabButton = styled.button<{ $active: boolean, $disabled?: boolean }>`
   font-size: 18px;
   padding: 12px 24px;
   margin-right: 8px;
-  opacity: ${({ $disabled }) => ($disabled ? 0.5 : 1)};
   cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'pointer')};
   border-radius: 8px 8px 0 0;
   transition: background 0.2s, color 0.2s;
   position: relative;
   z-index: 2;
+  &:hover {
+    opacity: ${({ $disabled }) => ($disabled ? 0.5 : 0.8)};
+  }
 `
 
 const TabContent = styled.div`

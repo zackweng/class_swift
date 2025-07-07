@@ -17,6 +17,9 @@ const DuplicateButton = styled.button`
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
 `
 
 interface CopyFieldProps {
