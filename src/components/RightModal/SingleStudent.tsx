@@ -74,9 +74,9 @@ export const SingleStudent = ({
     <Header $enabled={enabled} fontSize="16px" fontWeight={700} color={colors.white}>{String(id).padStart(2, '0')}</Header>
     <Name $enabled={enabled} fontSize="22px" fontWeight={700}>{name}</Name>
     <ScoreRow $enabled={enabled}>
-      <ScoreButton color={colors.red} $disabled={leftButtonDisabled} onClick={onSub}>-1</ScoreButton>
+      <ScoreButton color={colors.red} $disabled={leftButtonDisabled} onClick={() => !leftButtonDisabled && onSub()}>-1</ScoreButton>
       <Score $enabled={enabled} fontSize="18px" fontWeight={700}>{score}</Score>
-      <ScoreButton color={colors.green} $disabled={rightButtonDisabled} onClick={onAdd}>+1</ScoreButton>
+      <ScoreButton color={colors.green} $disabled={rightButtonDisabled} onClick={() => !rightButtonDisabled && onAdd()}>+1</ScoreButton>
     </ScoreRow>
   </Card>
 )
