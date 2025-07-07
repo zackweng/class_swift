@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { Modal, HStack } from '@ui'
 import { useDispatch, useSelector } from 'react-redux'
+import styled from 'styled-components'
 
 import { fetchStudents } from '../api/fetchStudents'
 import { LeftModal } from '../components/LeftModal/LeftModal'
@@ -14,8 +15,22 @@ import {
   closeRightModal,
 } from '../store/modalSlice'
 import { setClassroom } from '../store/studentSlice'
+import { colors } from '../styles/colors'
 
 import type { RootState } from '../store'
+
+const CenterButton = styled.button`
+  background: ${colors.blue};
+  color: ${colors.white};
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 18px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+`
 
 export function Home () {
   const [loading, setLoading] = useState(false)
@@ -41,10 +56,10 @@ export function Home () {
 
   return (
     <>
-      <HStack padding="10px">
-        <button onClick={handleOpenAllModal}>
+      <HStack padding="10px" style={{ justifyContent: 'center' }}>
+        <CenterButton onClick={handleOpenAllModal}>
           開啟全部 Modal
-        </button>
+        </CenterButton>
       </HStack>
       <Modal
         open={modalOpen}
