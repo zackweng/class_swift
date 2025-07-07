@@ -24,7 +24,6 @@ const MenuItem = styled.button`
   text-align: left;
   cursor: pointer;
   font-size: 16px;
-  transition: background 0.2s;
   &:hover {
     background: ${colors.grayDark};
   }
