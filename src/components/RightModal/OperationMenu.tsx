@@ -32,7 +32,6 @@ const MenuItem = styled.button`
 export const OperationMenu = () => {
   const [open, setOpen] = useState(false)
   const buttonRef = useRef<HTMLButtonElement>(null)
-  const menuRef = useRef<HTMLDivElement>(null)
 
   return (
     <>
@@ -43,7 +42,6 @@ export const OperationMenu = () => {
         <DotsVertical width={24} height={24} />
       </IconButton>
       <Menu
-        rootRef={menuRef}
         open={open}
         anchorEl={buttonRef.current}
         onClose={() => setOpen(false)}

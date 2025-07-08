@@ -1,6 +1,5 @@
-import { type ForwardedRef, useRef } from 'react'
+import { useRef } from 'react'
 
-import useMergedRef from '@react-hook/merged-ref'
 import { useClickAway } from 'ahooks'
 import styled from 'styled-components'
 
@@ -10,7 +9,6 @@ import { Popper, type PopperProps } from './Popper'
 
 export interface MenuProps extends PopperProps {
   onClose?: () => void,
-  rootRef: ForwardedRef<HTMLDivElement>,
 }
 
 const StyledMenu = styled.div`
@@ -30,11 +28,9 @@ export const Menu = (props: MenuProps) => {
     open,
     anchorEl,
     onClose,
-    rootRef,
     ...rest
   } = props
   const menuRef = useRef<HTMLDivElement>(null)
-  const mergeRef = useMergedRef(rootRef, menuRef)
 
   useClickAway(() => {
     if (!open) return
@@ -48,7 +44,7 @@ export const Menu = (props: MenuProps) => {
       placement="bottom"
       {...rest}
     >
-      <StyledMenu ref={mergeRef}>
+      <StyledMenu ref={menuRef}>
         {children}
       </StyledMenu>
     </Popper>
