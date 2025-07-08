@@ -152,6 +152,7 @@ Error generating stack: `+f.message+`
   padding: 12px 24px;
   margin-right: 8px;
   cursor: ${({$disabled:r})=>r?"not-allowed":"pointer"};
+  opacity: ${({$disabled:r})=>r?.5:1};
   border-radius: 8px 8px 0 0;
   transition: background 0.2s, color 0.2s;
   position: relative;
