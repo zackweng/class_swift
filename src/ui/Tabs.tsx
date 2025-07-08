@@ -35,6 +35,7 @@ const TabButton = styled.button<{ $active: boolean, $disabled?: boolean }>`
   padding: 12px 24px;
   margin-right: 8px;
   cursor: ${({ $disabled }) => ($disabled ? 'not-allowed' : 'pointer')};
+  opacity: ${({ $disabled }) => ($disabled ? 0.5 : 1)};
   border-radius: 8px 8px 0 0;
   transition: background 0.2s, color 0.2s;
   position: relative;
