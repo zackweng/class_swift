@@ -38,7 +38,7 @@ export const LeftModal = () => {
         </HStack>
         <Text fontSize="24px" fontWeight={700}>{`Join ${className}`}</Text>
         <HStack gap="32px" align="center">
-          <CopyField label="ID: X58E9647" text={`ID: ${id}`} />
+          <CopyField label={`ID: ${id ?? ''}`} text={id ?? ''} />
           <CopyField label="Link" text={link ?? ''} />
         </HStack>
         <VStack gap="12px" align="center" height="100%" justify="center">
